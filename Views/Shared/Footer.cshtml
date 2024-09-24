@@ -4,8 +4,92 @@
 @{
 }
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2024 - PetApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+<style>
+    .footerTop,.footerBottom {
+        background-color: #3b3330;
+        min-width: 100%;
+    }
+
+
+
+    .logo, .contactHeading, .timeHeading {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: orange;
+    }
+
+    .aboutUs {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .contactList {
+        padding-left: 0;
+        list-style-type: none;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .timeList {
+        padding-left: 0;
+        list-style-type: none;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .bottomContainer{
+        border-top: 1px solid orange;
+    }
+
+</style>
+
+
+<div class="footerTop container pt-4 mx-0 px-lg-5 mx-lg-0 row fixed-bottom">
+    <div class="col-12 col-lg-4">
+        <div class="text-white mx-2">
+            <h3 class="logo">Pet App Logo</h3>
+            <p class="mt-3 footerText">Tropicpet là hệ thống bệnh viện thú y chất lượng cao. Chúng tôi cung cấp các giải pháp và dịch vụ chăm sóc thú cưng toàn diện, chuyên nghiệp, uy tín TOP đầu tại Hà Nội.</p>
+        </div>
     </div>
-</footer>
+    <div class="col-12 col-lg-4">
+        <div class="text-white mx-2">
+            <h3 class="contactHeading">Thông tin liên hệ</h3>
+            <ul class="contactList mt-3">
+                <li class="text-uppercase mt-2">Tropicpet Veterinary JSC</li>
+                <li class=" mt-2">18 Nguyễn Công Trứ, Sơn Trà, Đà Nẵng</li>
+                <li class=" mt-2">contact@tropipet.com</li>
+                <li class=" mt-2">tropicpet.vn</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-12 col-lg-4">
+        <div class="text-white mx-2">
+            <h3 class="timeHeading">Thời gian làm việc</h3>
+            <ul class="timeList mt-3">
+                Chúng tôi làm việc tất cả các ngày trong tuần, mở cửa hoạt động xuyên trưa:
+                <li class=" mt-2">
+                    Khung giờ mở cửa
+                    7:30 - 20:00
+                </li>
+                <li class=" mt-2">
+                    Trực đêm
+                    Từ 20:00
+                </li>
+                <li class=" mt-2">
+                    Trực cấp cứu
+                    24/24
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footerBottom container pt-4 mx-0 px-lg-5 mx-lg-0 fixed-bottom">
+    <div class="bottomContainer d-flex justify-content-lg-between">
+        <div class="accept-policy my-3 text-white">Điều khoản sử dụng</div>
+        <div class="copyright my-3 text-white">COPYRIGHT © 2024 HA TUAN NHAT. ALL RIGHTS RESERVED.</div>
+    </div>
+</div>
