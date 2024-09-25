@@ -1,8 +1,155 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Membership - Bệnh viện thú y Petshop";
     Layout = "./Layout/_UserLayout";
 }
 
 
-<h1>Đây là trang membership</h1>
+@{
+    var membershipInfo = new List<dynamic>
+    {
+        new
+        {
+            Title = "TROPICPET MEMBERSHIP LÀ GÌ?",
+            Description = new List<string>
+            {
+                "Tropicpet Membership là chương trình cấp thẻ thành viên cho khách hàng của Hệ Thống Thú Y Tropicpet, chương trình mang đến những ưu đãi và quyền lợi đặc biệt dành riêng cho khách hàng thân thiết, những người đã tin tưởng và đồng hành cùng Tropicpet.",
+                "Khi sở hữu thẻ quyền lực “Tropicpet Member Card” mỗi lần sử dụng dịch vụ hay mua sắm sẽ trở nên đặc biệt hơn. Đó cũng là lời tri ân và khẳng định mạnh mẽ về mối quan hệ đặc biệt giữa quý khách và Tropicpet, nơi mà sự ủng hộ và đồng hành của bạn luôn được trân trọng.",
+            }
+        },
+        new
+        {
+            Title = "Làm thế nào để nhận được thẻ?",
+            Description = new List<string>
+            {
+                "Khách hàng của Tropicpet khi đạt điều kiện phát hành của các hạng thẻ phía dưới.",
+                "Khách hàng cung cấp thông tin làm thẻ tại quầy tiếp đón của Tropicpet, các thông tin cần thiết sẽ được nhân viên của chúng tôi hướng dẫn.",
+                "Bộ phận tiếp nhận sẽ kiểm tra, xác nhận thông tin và thực hiện thủ tục cấp thẻ thành viên."
+            }
+        },
+    };
+
+    var membershipCard = new List<dynamic>
+    {
+        new
+        {
+            Image = "https://tropicpet.vn/wp-content/uploads/2024/03/silver-card-367x235.png",
+            Title = "Silver Member",
+            Description = new List<string>
+            {
+                "Tropicpet Membership là chương trình cấp thẻ thành viên cho khách hàng của Hệ Thống Thú Y Tropicpet, chương trình mang đến những ưu đãi và quyền lợi đặc biệt dành riêng cho khách hàng thân thiết, những người đã tin tưởng và đồng hành cùng Tropicpet.",
+                "Khi sở hữu thẻ quyền lực “Tropicpet Member Card” mỗi lần sử dụng dịch vụ hay mua sắm sẽ trở nên đặc biệt hơn. Đó cũng là lời tri ân và khẳng định mạnh mẽ về mối quan hệ đặc biệt giữa quý khách và Tropicpet, nơi mà sự ủng hộ và đồng hành của bạn luôn được trân trọng.",
+            }
+        },
+         new
+        {
+            Image = "https://tropicpet.vn/wp-content/uploads/2024/03/gold-card-367x235.png",
+            Title = "Gold Member",
+            Description = new List<string>
+            {
+                "Tropicpet Membership là chương trình cấp thẻ thành viên cho khách hàng của Hệ Thống Thú Y Tropicpet, chương trình mang đến những ưu đãi và quyền lợi đặc biệt dành riêng cho khách hàng thân thiết, những người đã tin tưởng và đồng hành cùng Tropicpet.",
+                "Khi sở hữu thẻ quyền lực “Tropicpet Member Card” mỗi lần sử dụng dịch vụ hay mua sắm sẽ trở nên đặc biệt hơn. Đó cũng là lời tri ân và khẳng định mạnh mẽ về mối quan hệ đặc biệt giữa quý khách và Tropicpet, nơi mà sự ủng hộ và đồng hành của bạn luôn được trân trọng.",
+            }
+        },
+         new
+        {
+            Image = "https://tropicpet.vn/wp-content/uploads/2024/03/diamond-card-367x235.png",
+            Title = "Diamond Member",
+            Description = new List<string>
+            {
+                "Tropicpet Membership là chương trình cấp thẻ thành viên cho khách hàng của Hệ Thống Thú Y Tropicpet, chương trình mang đến những ưu đãi và quyền lợi đặc biệt dành riêng cho khách hàng thân thiết, những người đã tin tưởng và đồng hành cùng Tropicpet.",
+                "Khi sở hữu thẻ quyền lực “Tropicpet Member Card” mỗi lần sử dụng dịch vụ hay mua sắm sẽ trở nên đặc biệt hơn. Đó cũng là lời tri ân và khẳng định mạnh mẽ về mối quan hệ đặc biệt giữa quý khách và Tropicpet, nơi mà sự ủng hộ và đồng hành của bạn luôn được trân trọng.",
+            }
+        },
+    };
+
+}
+
+<style>
+    .route-banner {
+        width: 100%;
+        min-height: 340px;
+        background-image: url(https://tropicpet.vn/wp-content/uploads/2024/03/membership-bgr.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-attachment: scroll;
+    }
+
+    .section {
+    }
+
+    .define-section h3, .card-section h3 {
+        color: #015aad;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 1px solid red;
+    }
+
+    .section ul li {
+        color: #015aad;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 30px;
+        text-align: justify;
+    }
+
+    .card{
+        padding: 10px;
+    }
+
+    .card-title{
+        text-align: center;
+        text-transform: uppercase;
+        color: #015aad;
+        font-size:18px;
+        font-weight:800;
+    }
+</style>
+
+<div class="mainContent">
+    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
+        <h1 class="text-white fw-bolder text-uppercase">Membership</h1>
+    </div>
+    <div class="container my-4">
+        <div class="define-section">
+            @foreach (var item in membershipInfo)
+            {
+
+                <h3>@item.Title</h3>
+                <ul>
+                    @foreach (var desc in item.Description)
+                    {
+                        <li>@desc</li>
+                    }
+                </ul>
+
+            }
+        </div>
+
+        <div class="card-section">
+            <h3>Điều kiện - quyền lợi - hạng thẻ</h3>
+            <div class="row mt-5">
+                @foreach (var card in membershipCard)
+                {
+                    <div class="col-12 col-lg-4">
+                        <div class="card mb-4">
+                            <img src="@card.Image" class="card-img-top" alt="@card.Title">
+                            <div class="card-body">
+                                <h5 class="card-title">@card.Title</h5>
+                                <ul class="card-text">
+                                    @foreach (var desc in card.Description)
+                                    {
+                                        <li>@desc</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
