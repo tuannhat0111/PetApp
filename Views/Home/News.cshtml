@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Tin tức - Bệnh viện thú y Petshop";
+    Layout = "./Layout/_UserLayout";
+}
+
+@{
+    var newsList = new List<dynamic>
+    {
+        new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Technology",
+            Title = "New AI Breakthrough Announced",
+            Text = "Researchers have unveiled a new AI model that can learn and adapt faster than ever before."
+        },
+        new
+        {
+          Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Health",
+            Title = "Health Benefits of a Plant-Based Diet",
+            Text = "Studies show that a plant-based diet can significantly reduce the risk of chronic diseases."
+        },
+        new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Sports",
+            Title = "Team Wins Championship After Decade",
+            Text = "The long-awaited victory has brought joy to fans after a ten-year drought."
+        },
+        new
+        {
+
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Business",
+            Title = "Stock Markets Reach All-Time Highs",
+            Text = "Global markets are seeing unprecedented growth amidst economic recovery."
+        },
+         new
+        {
+
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Business",
+            Title = "Stock Markets Reach All-Time Highs",
+            Text = "Global markets are seeing unprecedented growth amidst economic recovery."
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Tag = "Business",
+            Title = "Stock Markets Reach All-Time Highs",
+            Text = "Global markets are seeing unprecedented growth amidst economic recovery."
+        },
+    };
+}
+
+<style>
+    .route-banner {
+        width: 100%;
+        min-height: 340px;
+        background-image: url(https://tropicpet.vn/wp-content/uploads/2024/03/membership-bgr.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-attachment: scroll;
+    }
+
+    .card {
+        min-height: 350px;
+    }
+</style>
+
+<div class="mainContent">
+    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
+        <h1 class="text-white fw-bolder text-uppercase">Tin tức</h1>
+    </div>
+    <div class="news-container container">
+        <div class="row news-section mt-4">
+            @foreach (var news in newsList)
+            {
+                <div class="col-12 col-lg-4">
+                    <div class="card my-3">
+                        <img src="@news.Image" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@news.Title</h5>
+                            <p class="card-text">@news.Text</p>
+                            <a href="#" class="btn btn-primary">@news.Tag</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div> 

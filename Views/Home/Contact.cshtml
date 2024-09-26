@@ -3,6 +3,41 @@
     Layout = "./Layout/_UserLayout";
 }
 
+
+@{
+    var contactList = new List<dynamic>
+    {
+        new
+        {
+            Title = "Tropicpet Hà Đông",
+            Address = "Số 175B, Đường 19/5, Văn Quán, Hà Đông, Hà Nội",
+            Hotline = "0961555911",
+            Fanpage = "Bệnh viện Thú y Tropicpet Đà Nằng"
+        },
+         new
+        {
+            Title = "Tropicpet Hà Đông",
+            Address = "Số 175B, Đường 19/5, Văn Quán, Hà Đông, Hà Nội",
+            Hotline = "0961555911",
+            Fanpage = "Bệnh viện Thú y Tropicpet Đà Nằng"
+        },
+         new
+        {
+            Title = "Tropicpet Hà Đông",
+            Address = "Số 175B, Đường 19/5, Văn Quán, Hà Đông, Hà Nội",
+            Hotline = "0961555911",
+            Fanpage = "Bệnh viện Thú y Tropicpet Đà Nằng"
+        },
+         new
+        {
+            Title = "Tropicpet Hà Đông",
+            Address = "Số 175B, Đường 19/5, Văn Quán, Hà Đông, Hà Nội",
+            Hotline = "0961555911",
+            Fanpage = "Bệnh viện Thú y Tropicpet Đà Nằng"
+        },
+    };
+}
+
 <style>
     .route-banner {
         width: 100%;
@@ -13,13 +48,113 @@
         background-position: center bottom;
         background-attachment: scroll;
     }
+    .content-container{
+        background-image: url(https://tropicpet.vn/wp-content/uploads/2021/05/bg-section.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .contact-container{
+        background-color: white;
+        padding: 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    .contact-container h1{
+        font-weight: 700;
+        font-size: 22px;
+        color:#015aad;
+        text-transform:uppercase;
+        border-bottom: 1px solid red;
+        padding-bottom: 10px;
+    }
+
+    
+
+    .table tr th{
+        font-size: 17px;
+        font-weight: bold;
+        color: #122257;
+    }
+
+    h3{
+        font-weight: 700;
+        font-size: 22px;
+        color: #015aad;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+    .contactList{
+        border-bottom: 1px solid red;
+        padding-bottom: 5px;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+  
 </style>
+
 
 <div class="mainContent">
     <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
         <h1 class="text-white fw-bolder text-uppercase">Liên hệ</h1>
-
     </div>
-    <div>
+    <div class="content-container">
+        <div class="contact-container container mt-4">
+            <h1>Thông tin liên hệ</h1>
+            <div class="row contactList">
+                @foreach (var contact in contactList)
+                {
+                    <div class="col-12 col-lg-6">
+                        <h3>
+                            @contact.Title
+                        </h3>
+                        <div class="table-reponsive">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Address</th>
+                                    <td>@contact.Address</td>
+                                </tr>
+                                <tr>
+                                    <th>Hotline</th>
+                                    <td>@contact.Hotline</td>
+                                </tr>
+                                <tr>
+                                    <th>Fanpage</th>
+                                    <td>@contact.Fanpage</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <form class="mb-3 mb-lg-0">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" placeholder="Họ và trên">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Tiêu đề</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Tiêu đề">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Nội dung</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Nội dung yêu cầu"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary text-uppercase fw-bold">Gửi đến Tropicpet</button>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <img src="https://cdn.outsideonline.com/wp-content/uploads/2023/03/Funny_Dog_H.jpg?crop=16:9&width=960&enable=upscale&quality=100" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+       
     </div>
 </div>
