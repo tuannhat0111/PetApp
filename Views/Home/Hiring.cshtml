@@ -1,26 +1,141 @@
 ﻿@{
     ViewData["Title"] = "Tuyển dụng - Bệnh viện thú y Petshop";
+    ViewData["BannerImageUrl"] = "https://tropicpet.vn/wp-content/uploads/2021/05/bg-title-contact.jpg";
     Layout = "./Layout/_UserLayout";
+}
+
+@{
+    var jobList = new List<dynamic>
+    {
+        new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "02 Người",
+            Title = "Bác sĩ thú y",
+            Time = "Full time",
+            Salary = "Từ 12 triệu",
+            Status = "Còn tuyển"
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "06 Người",
+            Title = "Trợ lý bác sĩ",
+            Time = "Full time",
+            Salary = "Từ 10 triệu",
+            Status = "Còn tuyển"
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "02 Người",
+            Title = "Spa - Cắt tỉa",
+            Time = "Full time",
+            Salary = "Từ 15 triệu",
+            Status = "Còn tuyển"
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "01 Người",
+            Title = "Spa - Tắm sấy",
+            Time = "Full time",
+            Salary = "Từ 10 triệu",
+            Status = "Hết hạn"
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "01 Người",
+            Title = "Lễ tân - CSKH",
+            Time = "Full time",
+            Salary = "Từ 10 triệu",
+            Status = "Hết hạn"
+        },
+         new
+        {
+            Image ="https://tropicpet.vn/wp-content/uploads/2024/09/cho-bi-hoc-xuong.jpg?v=1727252353",
+            Amount = "05 Người",
+            Title = "Thực tập sinh",
+            Time = "Full time",
+            Salary = "Từ 2 triệu",
+            Status = "Còn tuyển"
+        },
+
+    };
 }
 
 
 <style>
-    .route-banner {
-        width: 100%;
-        min-height: 340px;
-        background-image: url(https://tropicpet.vn/wp-content/uploads/2021/05/bg-title-contact.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: scroll;
+    .jobListContainer {
+    }
+
+    .jobListContainer {
+    }
+
+    .job-card {
+        padding: 5px;
+        margin: 10px 0 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+        .job-card:hover {
+            transform: scale(1.02);
+        }
+
+    .job-status.active {
+        color: green;
+    }
+
+    .job-status.inactive {
+        color: red;
+    }
+
+    .job-salary {
+        font-weight: bold;
+        color: #5cb85c;
+    }
+
+    .job-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .hiringEventContainer {
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: #015add;
+        border-bottom: 1px solid red;
+        padding: 0;
+        padding-bottom: 10px;
     }
 </style>
 
 <div class="mainContent">
-    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
-        <h1 class="text-white fw-bolder text-uppercase">Tuyển dụng</h1>
-
-    </div>
-    <div>
+    <div class="jobListContainer container mt-4">
+        <h1 class="title">Cơ hội việc làm tại Tropicpet</h1>
+        <div class="row">
+            @foreach (var job in jobList)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card job-card">
+                        <img src="@job.Image" class="card-img-top" alt="@job.Title" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="job-title">@job.Title</h5>
+                            <p class="card-text mb-1"><strong>Số lượng:</strong> @job.Amount</p>
+                            <p class="card-text mb-1"><strong>Thời gian:</strong> @job.Time</p>
+                            <p class="card-text mb-1 job-salary">@job.Salary</p>
+                            <p class="card-text job-status ${jobStatusClass}">@job.Status</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </div>

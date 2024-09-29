@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Tin tức - Bệnh viện thú y Petshop";
+    ViewData["BannerImageUrl"] = "https://tropicpet.vn/wp-content/uploads/2024/08/page-title-blog.jpg";
     Layout = "./Layout/_UserLayout";
 }
 
@@ -54,30 +55,17 @@
 }
 
 <style>
-    .route-banner {
-        width: 100%;
-        min-height: 340px;
-        background-image: url(https://tropicpet.vn/wp-content/uploads/2024/03/membership-bgr.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: scroll;
-    }
-
     .card {
         min-height: 350px;
     }
 </style>
 
 <div class="mainContent">
-    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
-        <h1 class="text-white fw-bolder text-uppercase">Tin tức</h1>
-    </div>
     <div class="news-container container">
         <div class="row news-section mt-4">
             @foreach (var news in newsList)
             {
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="card my-3">
                         <img src="@news.Image" class="card-img-top" alt="...">
                         <div class="card-body">

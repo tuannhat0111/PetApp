@@ -1,0 +1,18 @@
+﻿
+
+<style>
+    .route-banner {
+        width: 100%;
+        min-height: 340px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-attachment: scroll;
+    }
+</style>
+
+<div class="route-banner container-fluid d-flex justify-content-center align-items-center" style="background-image: url('@ViewData["BannerImageUrl"]');">
+    <h1 class="text-white fw-bolder text-uppercase">
+        @ViewData["Title"]
+    </h1>
+</div>

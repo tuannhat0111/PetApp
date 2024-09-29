@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Membership - Bệnh viện thú y Petshop";
+    ViewData["BannerImageUrl"] = "https://tropicpet.vn/wp-content/uploads/2024/03/membership-bgr.jpg";
     Layout = "./Layout/_UserLayout";
 }
 
@@ -65,16 +66,6 @@
 }
 
 <style>
-    .route-banner {
-        width: 100%;
-        min-height: 340px;
-        background-image: url(https://tropicpet.vn/wp-content/uploads/2024/03/membership-bgr.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: scroll;
-    }
-
     .section {
     }
 
@@ -95,23 +86,20 @@
         text-align: justify;
     }
 
-    .card{
+    .card {
         padding: 10px;
     }
 
-    .card-title{
+    .card-title {
         text-align: center;
         text-transform: uppercase;
         color: #015aad;
-        font-size:18px;
-        font-weight:800;
+        font-size: 18px;
+        font-weight: 800;
     }
 </style>
 
 <div class="mainContent">
-    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
-        <h1 class="text-white fw-bolder text-uppercase">Membership</h1>
-    </div>
     <div class="container my-4">
         <div class="define-section">
             @foreach (var item in membershipInfo)

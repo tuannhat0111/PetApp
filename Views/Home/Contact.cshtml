@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Liên hệ - Bệnh viện thú y Petshop";
+    ViewData["BannerImageUrl"] = "https://tropicpet.vn/wp-content/uploads/2021/05/bg-section-7.jpg";
     Layout = "./Layout/_UserLayout";
 }
 
@@ -39,15 +40,6 @@
 }
 
 <style>
-    .route-banner {
-        width: 100%;
-        min-height: 340px;
-        background-image: url(http://tropicpet.vn/wp-content/uploads/2021/05/bg-section-7.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-attachment: scroll;
-    }
     .content-container{
         background-image: url(https://tropicpet.vn/wp-content/uploads/2021/05/bg-section.png);
         background-position: center center;
@@ -95,16 +87,13 @@
 
 
 <div class="mainContent">
-    <div class="route-banner container-fluid d-flex justify-content-center align-items-center">
-        <h1 class="text-white fw-bolder text-uppercase">Liên hệ</h1>
-    </div>
     <div class="content-container">
         <div class="contact-container container mt-4">
             <h1>Thông tin liên hệ</h1>
             <div class="row contactList">
                 @foreach (var contact in contactList)
                 {
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <h3>
                             @contact.Title
                         </h3>
